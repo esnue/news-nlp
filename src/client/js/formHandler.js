@@ -25,9 +25,9 @@ function handleSubmit(event) {
             console.log('Unable to POST data', error);
         }
     postData('http://localhost:8081/add', options);
-    .then(res => {
+    /*.then(res => {
      return res.json()
-    })
+   })*/
     .then(function(data) {
         document.getElementById('subjectivity').innerHTML = data.subjectivity;
         document.getElementById('agreement').innerHTML = data.agreement;

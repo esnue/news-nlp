@@ -63,30 +63,16 @@ var req = https.request(options, function (res) {
 
 req.end();
 
-
-/*let options = {
-    method: 'POST',
-    hostname: 'api.meaningcloud.com',
-    path: `/sentiment-2.1?key=${application_key}&lang=auto&txt=${formText}`,
-    headers: {
-          'Content-Type': 'application/json',
-    },
-    maxRedirects: 20
-};*/
-
-/*app.post('/add', addEntry);
+//post endpoint
+app.post('/add', addEntry);
 
 function addEntry(request, response){
     //add entries to projectData object
-    projectData['name'] = request.body.name;
+    projectData['agreement'] = request.body.agreement;
+    projectData['subjectivity'] = request.body.subjectivity;
     response.send(projectData);
     console.log('Post has been received');
-};*/
-
-
-app.get('/add', function(req,res){
-    res.send(options)
-})
+};
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
