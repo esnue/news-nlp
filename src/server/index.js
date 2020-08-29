@@ -32,7 +32,7 @@ const application_key = process.env.API_KEY
 // check what text was put into the form field
 const formText = document.getElementById('name').value
 
-var https = require('follow-redirects').https;
+/*var https = require('follow-redirects').https;
 var fs = require('fs');
 
 var options = {
@@ -61,9 +61,22 @@ var req = https.request(options, function (res) {
   });
 });
 
-req.end();
+req.end();*/
 
-//post endpoint
+const getAnalysis = async (apiURL) => {
+  const response = await fetch( `api.meaningcloud.com'/sentiment-2.1?key=${application_key}&lang=auto&txt=${formText}`;
+  try {
+      const newData = await response.json();
+      console.log(newData);
+      console.log(newData.agreement);
+      return newData;
+  }catch(error) {
+      console.log('ERROR', error);
+  }
+}
+
+
+//post endpoint for API results
 app.post('/add', addEntry);
 
 function addEntry(request, response){
