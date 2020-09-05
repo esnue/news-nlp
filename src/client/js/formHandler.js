@@ -7,31 +7,18 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    const postData = async (url='', data={} =>
-        const response = await fetch(url, {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+    const application_key = "3462d12a9d6216638bfb02939d33b267";
+    var settings = {
+        "url": `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&lang=en&txt=${formText}&model=general`,
+        "method": "POST",
+        "timeout": 0,
+      };
+    
+      $.ajax(settings).done(function (response) {
         console.log(response);
-        try {
-            const newData = await response.json();
-            console.log(newData);
-            // appropriately handle the error
-        } catch (error) {
-            console.log('Unable to POST data', error);
-        }
-    postData('http://localhost:8081/add', options);
-    /*.then(res => {
-     return res.json()
-   })*/
-    .then(function(data) {
-        document.getElementById('subjectivity').innerHTML = data.subjectivity;
-        document.getElementById('agreement').innerHTML = data.agreement;
-    })
+        document.getElementById('subjectivity').innerHTML = response.subjectivity;
+        document.getElementById('agreement').innerHTML = response.agreement;
+      });
 }
 
 export { handleSubmit }

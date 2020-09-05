@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <meta charset="utf-8">
-        <title>NLP Text Evaluation</title>
+        <title>Evaluate News NLP</title>
         <link rel="stylesheet" href="/styles/resets.scss">
         <link rel="stylesheet" href="/styles/base.scss">
         <link rel="stylesheet" href="/styles/header.scss">
         <link rel="stylesheet" href="/styles/form.scss">
-        <link rel="stylesheet" href="/styles/footer.scss">
     </head>
 
     <body>
@@ -22,18 +22,18 @@
         </header>
 
         <main>
-          <section>
-              <form class="" onsubmit="return Client.handleSubmit(event)">
-                  <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                  <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-              </form>
-          </section>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            <section>
 
             <section>
                 <strong>Form Results:</strong>
                 <div id="results">
-                    <div id="subjectivity"></div>
-                    <div id="agreement"></div>
+                    <div id="agreement">Agreement: </div>
+                    <div id="subjectivity">Subjectivity: </div>
                 </div>
             </section>
         </main>

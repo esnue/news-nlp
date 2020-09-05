@@ -1,10 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Setup empty JS object to act as endpoint for all routes
-const projectData = {};
-
-
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
@@ -25,68 +21,3 @@ app.listen(8081, function () {
 })
 
 
-//API
-
-
-const application_key = process.env.API_KEY
-// check what text was put into the form field
-const formText = document.getElementById('name').value
-
-/*var https = require('follow-redirects').https;
-var fs = require('fs');
-
-var options = {
-  'method': 'POST',
-  'hostname': 'api.meaningcloud.com',
-  'path': `/sentiment-2.1?key=${application_key}&lang=auto&txt=${formText}`
-  'headers': {
-  },
-  'maxRedirects': 20
-};
-
-var req = https.request(options, function (res) {
-  var chunks = [];
-
-  res.on("data", function (chunk) {
-    chunks.push(chunk);
-  });
-
-  res.on("end", function (chunk) {
-    var body = Buffer.concat(chunks);
-    console.log(body.toString());
-  });
-
-  res.on("error", function (error) {
-    console.error(error);
-  });
-});
-
-req.end();*/
-
-const getAnalysis = async (apiURL) => {
-  const response = await fetch( `api.meaningcloud.com'/sentiment-2.1?key=${application_key}&lang=auto&txt=${formText}`;
-  try {
-      const newData = await response.json();
-      console.log(newData);
-      console.log(newData.agreement);
-      return newData;
-  }catch(error) {
-      console.log('ERROR', error);
-  }
-}
-
-
-//post endpoint for API results
-app.post('/add', addEntry);
-
-function addEntry(request, response){
-    //add entries to projectData object
-    projectData['agreement'] = request.body.agreement;
-    projectData['subjectivity'] = request.body.subjectivity;
-    response.send(projectData);
-    console.log('Post has been received');
-};
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
