@@ -1,0 +1,49 @@
+{
+    "status": {
+        "code": "0",
+        "msg": "OK",
+        "credits": "1",
+        "remaining_credits": "19984"
+    },
+    "model": "general_en",
+    "score_tag": "P+",
+    "agreement": "AGREEMENT",
+    "subjectivity": "SUBJECTIVE",
+    "confidence": "100",
+    "irony": "NONIRONIC",
+    "sentence_list": [
+        {
+            "text": "I love my hamster",
+            "inip": "0",
+            "endp": "16",
+            "bop": "y",
+            "confidence": "100",
+            "score_tag": "P+",
+            "agreement": "AGREEMENT",
+            "segment_list": [
+                {
+                    "text": "I love my hamster",
+                    "segment_type": "main",
+                    "inip": "0",
+                    "endp": "16",
+                    "confidence": "100",
+                    "score_tag": "P+",
+                    "agreement": "AGREEMENT",
+                    "polarity_term_list": [
+                        {
+                            "text": "love@V",
+                            "inip": "2",
+                            "endp": "5",
+                            "confidence": "100",
+                            "score_tag": "P+"
+                        }
+                    ]
+                }
+            ],
+            "sentimented_entity_list": [],
+            "sentimented_concept_list": []
+        }
+    ],
+    "sentimented_entity_list": [],
+    "sentimented_concept_list": []
+}

@@ -7,17 +7,22 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    const application_key = "3462d12a9d6216638bfb02939d33b267";
-    var settings = {
-        "url": `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&lang=en&txt=${formText}&model=general`,
+    let settings = {
+        "url": "http://localhost:8080/APIresponse",
         "method": "POST",
         "timeout": 0,
+        "data": {
+            txt: encodeURI(formText),
+            model: "general"
+        },
+        "dataType": "json"
       };
     
       $.ajax(settings).done(function (response) {
         console.log(response);
-        document.getElementById('subjectivity').innerHTML = response.subjectivity;
-        document.getElementById('agreement').innerHTML = response.agreement;
+        document.getElementById('subjectivity').innerHTML = "Subjectivity: " + response.subjectivity;
+        document.getElementById('agreement').innerHTML = "Agreement: " + response.agreement;
+        document.getElementById('irony').innerHTML = "Variant: " + response.irony;
       });
 }
 
