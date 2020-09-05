@@ -31,6 +31,9 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
+        /*new webpack.DefinePlugin({
+            __PORT__: "8081"
+        })*/
     ],
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],

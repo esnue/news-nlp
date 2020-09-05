@@ -13,7 +13,7 @@ function handleSubmit(event) {
   }
   else {
     let settings = {
-      "url": "/APIresponse",
+      "url": "http://localhost:8081/APIresponse",
       "method": "POST",
       "timeout": 0,
       "data": {

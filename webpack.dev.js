@@ -25,6 +25,9 @@ module.exports = {
         libraryTarget: 'var',
         library: 'Client'
     },
+    /*devServer: {
+        port: 8080
+    },*/
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
@@ -39,5 +42,8 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
+        /*new webpack.DefinePlugin({
+            __PORT__: "8080"
+        })*/
     ]
 }

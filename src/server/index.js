@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.use(express.static('dist'))
@@ -17,12 +17,13 @@ console.log(__dirname)
 
 //display UI
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+  res.sendFile('dist/index.html')
 })
 
+//console.log("Port: "+__PORT__)
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-    console.log(`Example app listening on port 8081!`)
+  console.log(`Example app listening on port 8081!`)
 })
 
 //API Call 
@@ -60,7 +61,7 @@ app.post('/APIresponse', function (proxy_req, proxy_res) {
   });
 
   req.end();
-  
+
 });
 
 
