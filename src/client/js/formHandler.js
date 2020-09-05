@@ -20,9 +20,10 @@ function handleSubmit(event) {
     
       $.ajax(settings).done(function (response) {
         console.log(response);
-        document.getElementById('subjectivity').innerHTML = "Subjectivity: " + response.subjectivity;
-        document.getElementById('agreement').innerHTML = "Agreement: " + response.agreement;
-        document.getElementById('irony').innerHTML = "Variant: " + response.irony;
+        let json = $.parseJSON(response);
+        document.getElementById('subjectivity').innerHTML = "Subjectivity: " + json.subjectivity;
+        document.getElementById('agreement').innerHTML = "Agreement: " + json.agreement;
+        document.getElementById('irony').innerHTML = "Variant: " + json.irony;
       });
 }
 
