@@ -22,7 +22,6 @@ app.get('/', function (req, res) {
   res.sendFile('dist/index.html')
 })
 
-//console.log("Port: "+__PORT__)
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
   console.log(`Example app listening on port 8081!`)
@@ -34,16 +33,18 @@ var fs = require('fs');
 
 const application_key = process.env.API_KEY;
 
+//use proxy_req to get data object containing user input from client-side formHandler.js through POST route
 app.post('/APIresponse', function (proxy_req, proxy_res) {
   var options = {
     'method': 'POST',
     'hostname': 'api.meaningcloud.com',
-    'path': `/sentiment-2.1?key=${application_key}&lang=en&txt=${proxy_req.body.txt}&model=${proxy_req.body.model}`,
+    'path': `/sentiment-2.1?key=${application_key}&lang=auto&url=${proxy_req.body.url}&model=${proxy_req.body.model}`,
     'headers': {
     },
     'maxRedirects': 20
   };
   console.log(proxy_req.body);
+  //perform API call
   var req = https.request(options, function (res) {
     var chunks = [];
 

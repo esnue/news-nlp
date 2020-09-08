@@ -2,7 +2,7 @@ function handleSubmit(event) {
   event.preventDefault()
 
   // check what text was put into the form field
-  let formText = document.getElementById('name').value
+  let formText = document.getElementById('url').value
   Client.checkForName(formText)
 
   console.log("::: Form Submitted :::")
@@ -17,7 +17,7 @@ function handleSubmit(event) {
       "method": "POST",
       "timeout": 0,
       "data": {
-        txt: encodeURI(formText),
+        url: encodeURI(formText),
         model: "general"
       },
       "dataType": "json"
