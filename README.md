@@ -22,8 +22,3 @@ Webpack is used for packaging, service workers are installed to provide offline 
 - MeaningCloud Documentation
 - Jest Documentation 
 
-## Deploying
-
-The project has been deployed to XXX
-
-A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
