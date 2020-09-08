@@ -35,7 +35,7 @@ const application_key = process.env.API_KEY;
 
 //use proxy_req to get data object containing user input from client-side formHandler.js through POST route
 app.post('/APIresponse', function (proxy_req, proxy_res) {
-  var options = {
+  let options = {
     'method': 'POST',
     'hostname': 'api.meaningcloud.com',
     'path': `/sentiment-2.1?key=${application_key}&lang=auto&url=${proxy_req.body.url}&model=${proxy_req.body.model}`,
