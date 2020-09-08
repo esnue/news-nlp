@@ -1,5 +1,5 @@
 //get output from validURL
-import { validURL } from '\src\client\js\validURL.js';
+import { validURL } from '.\src\client\js\validURL.js';
 //const validateURL = require('..\src\client\js\validURL');
 
 //perform test with test URL 
@@ -10,7 +10,7 @@ describe("URL validity testing", () => {
         //let testURL = document.getElementById('url');
         test("TRUE", () => {
             const result = validURL(testURL);
-            expect(result).toBeDefinded();
+            expect(result).toBeDefined();
             expect(result).toBe(true); 
         });
     });
