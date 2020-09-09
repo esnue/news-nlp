@@ -4,12 +4,12 @@ function handleSubmit(event) {
   // check what text was put into the form field
   let formText = document.getElementById('url').value
   Client.checkForName(formText)
+  const validator = Client.validURL(formText)
 
   console.log("::: Form Submitted :::")
 
-  if (formText == "") {
-    alert("Please fill out the form");
-    return false;
+  if (validator === false) {s
+    alert("Please provide correct URL format");
   }
   else {
     let settings = {
