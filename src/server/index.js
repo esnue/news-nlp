@@ -72,6 +72,12 @@ app.post('/APIresponse', function (proxy_req, proxy_res) {
 
 });
 
+//for JEST testing
+function sum(x, y) {
+  return x + y;
+}
+export { sum }
+
 
 
 
