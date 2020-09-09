@@ -16,6 +16,11 @@ app.use(express.static('dist'))
 
 console.log(__dirname)
 
+//for JEST testing
+/*function Summarize(x, y) {
+  return x + y;
+}*/
+
 
 //display UI
 app.get('/', function (req, res) {
@@ -72,11 +77,8 @@ app.post('/APIresponse', function (proxy_req, proxy_res) {
 
 });
 
-//for JEST testing
-function sum(x, y) {
-  return x + y;
-}
-export { sum }
+
+
 
 
 
