@@ -4,6 +4,6 @@ import { handleSubmit } from '..\__mocks__\formHandler.js'
 describe('Test mockAPI', () => {
     test('It should respond with time:now', async () => {
       const response = await request(app).get('/test');
-      expect(response.json).toBe('time: now');
+      expect(response.time).toBe('now');
     });
 });
