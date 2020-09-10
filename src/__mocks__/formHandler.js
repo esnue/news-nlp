@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 import { checkForName } from '../client/js/nameChecker'
 
 function handleSubmit(event) {
