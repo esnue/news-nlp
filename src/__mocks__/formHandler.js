@@ -1,4 +1,6 @@
-export default function mockRequest(event) {
+import { checkForName } from '../client/js/nameChecker'
+
+function handleSubmit(event) {
     event.preventDefault()
 
     let formText = "test text"
@@ -7,10 +9,11 @@ export default function mockRequest(event) {
     console.log("::: Form Submitted :::")
     fetch('http://localhost:8081/test')
     .then(res => res.json())
-    return res;
-    /*.then(function(res) {
+    .then(function(res) {
         console.log(res.time);
         return res.time;
-    })*/
+    })
 }
+
+export { handleSubmit }
 
