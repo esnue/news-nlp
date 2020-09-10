@@ -1,4 +1,4 @@
-import { sum } from '..\server\sum.js'
+import { sum } from '../server/sum.js'
 
 describe('test server side code', () => {
     test('adds 2 + 3 to equal 5', () => {

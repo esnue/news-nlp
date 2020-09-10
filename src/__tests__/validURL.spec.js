@@ -1,4 +1,4 @@
-import validURL from '..\client\js\validURL.js'
+import { validURL } from '../client/js/validURL.js'
 
 describe("URL validity testing", () => {
     let testURL = "https://www.nytimes.com/";
