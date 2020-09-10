@@ -1,17 +1,15 @@
-
+let texts = {
+    "text": "test"
+}
 
 const fetch = require("node-fetch");
 
-function handleSubmit(event) {
-    event.preventDefault()
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    /*.then(function(res) {
-        //console.log(json.time);
-        return res;
-    })*/
+async function handleSubmit() {
+    
+    console.log("::: Form Submitted :::");
+    const res = await fetch('http://localhost:8081/test/');
+    let data = await res.json();
+    return data;
 }
 
 export { handleSubmit }
