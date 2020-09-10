@@ -3,6 +3,6 @@ import { handleSubmit } from '../__mocks__/formHandler';
 describe('Test mockAPI', () => {
   test('the API should send json response', async () => {
     const res = await handleSubmit({ preventDefault: () => { } });
-    expect(res).toBeDefined();
+    expect(res.time).toBe('now');
   });
 });
