@@ -10,10 +10,10 @@ function handleSubmit(event) {
     console.log("::: Form Submitted :::")
     fetch('http://localhost:8081/test')
     .then(res => res.json())
-    .then(function(res) {
-        console.log(res.time);
-        return res.time;
-    })
+    /*.then(function(res) {
+        console.log(json.time);
+        //return json.time;
+    })*/
 }
 
 export { handleSubmit }
